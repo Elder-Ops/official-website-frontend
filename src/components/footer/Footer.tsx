@@ -48,14 +48,14 @@ const Footer = () => {
           <div className="border-t border-t-[#EAEAEA] pt-4 text-xs font-medium">
             <div className="flex flex-col items-center justify-between gap-5 w-full xl:flex-row">
               <div className="flex items-center flex-wrap justify-center gap-4 text-xs text-[#8BA396] font-bold lg:justify-start sm:gap-12 lg:gap-16">
-                <a href="mailto:info@DesignOrbit.com">
+                <a href="mailto:contact@elderops.net">
                   Email:{" "}
-                  <span className="text-accent-one">info@DesignOrbit.com</span>
+                  <span className="text-accent-one">contact@elderops.net</span>
                 </a>
 
-                <a href="mailto:info@DesignOrit.com">
+                <a href="mailto:contact@elderops.net">
                   Contact enquiries:{" "}
-                  <span className="text-accent-one">info@Designrbit.com</span>
+                  <span className="text-accent-one">contact@elderops.net</span>
                 </a>
                 <a href="tel:+16285550147">
                   Phone:{" "}
