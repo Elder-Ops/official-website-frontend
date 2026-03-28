@@ -15,17 +15,16 @@ type ButtonProps = (
 const Button = ({ children, className, ...props }: ButtonProps) => {
   const isGlass = props.variant.startsWith("glass");
   const baseClasses = cn(
-    "px-6 py-3 rounded-[300px] font-medium text-white inline-block cursor-pointer touch-manipulation",
+    "px-6 py-3 rounded-[300px] font-medium text-white inline-flex items-center justify-center cursor-pointer touch-manipulation",
     isGlass && "btn-glass-effect",
     className,
   );
-
   if (props.variant === "link" || props.variant === "glass-link") {
     return (
-      <Link 
-        to={props.to} 
-        className={baseClasses} 
-        onClick={(e) => {
+      <Link
+        to={props.to}
+        className={baseClasses}
+        onClick={e => {
           e.currentTarget.blur();
           props.onClick?.();
         }}

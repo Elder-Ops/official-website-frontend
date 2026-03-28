@@ -6,7 +6,7 @@ import closeIcon from "@/assets/svg/cancel-icon.svg";
 import { useScrollDetection } from "@/hooks/useScrollDetection";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useGlobalStore } from "@/store/useGlobalStore";
-import Button from "../ui/button";
+// import Button from "../ui/button";
 import Navbar from "../navbar/Navbar";
 import CalendlyCTA from "../contactUs/react-calendly";
 
@@ -47,25 +47,21 @@ const Header = () => {
 
         <Navbar isHomePage={!showWhiteBg && !showDarkContent} />
         <div className="md:flex hidden items-center gap-4">
-<CalendlyCTA shouldRenderOnMobile={false} />
-        {isHomePage ? (
-          <Button
-            variant={showWhiteBg ? "glass-link" : "link"}
-            to="/contact-us"
-            className={` ${showWhiteBg ? "" : "bg-white text-primary"}`}
-          >
-            Contact Us
-          </Button>
-        ) : (
-          <Button
-            variant="glass-link"
-            to="/contact-us"
-          >
-            Contact Us
-          </Button>
-        )}
+          {/* {isHomePage ? (
+            <Button
+              variant={showWhiteBg ? "glass-link" : "link"}
+              to="/contact-us"
+              className={` hover:-translate-y-1 border  transition-transform duration-200  h-10! ${showWhiteBg ? "" : "bg-white text-primary"}`}
+            >
+              Contact Us
+            </Button>
+          ) : (
+            <Button variant="glass-link" to="/contact-us">
+              Contact Us
+            </Button>
+          )} */}
 
-         
+          <CalendlyCTA shouldRenderOnMobile={false} />
         </div>
       </div>
     </header>

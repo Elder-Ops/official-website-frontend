@@ -2,7 +2,7 @@ import { cn } from "@/lib/util";
 import type { NavbarProps, NavLinks } from "@/types";
 import { NavLink } from "react-router";
 import { useGlobalStore } from "@/store/useGlobalStore";
-import Button from "@/components/ui/button";
+// import Button from "@/components/ui/button";
 import CalendlyCTA from "../contactUs/react-calendly";
 
 const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
@@ -24,11 +24,15 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
       label: "About",
       path: "/about",
     },
-
-    isFooter && {
-      label: "Contact",
+    {
+      label: "Contact Us",
       path: "/contact-us",
     },
+
+    // isFooter && {
+    //   label: "Contact",
+    //   path: "/contact-us",
+    // },
   ].filter(Boolean) as NavLinks[];
 
   return (
@@ -54,10 +58,11 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
           onClick={isFooter ? undefined : closeMobileMenu}
           className={({ isActive }) =>
             cn(
-              "py-2 px-3 -mx-3 transition-colors hover:text-success active:text-success touch-manipulation",
+              "py-2 px-3 -mx-3 flex flex-col items-center justify-center transition-colors hover:text-success active:text-success touch-manipulation",
               isActive && "font-semibold text-success",
+              isFooter && isMobileMenuOpen && "!bg-red-[500] h-[70vh] ",
               !isFooter &&
-                "max-md:text-primary max-md:w-full max-md:py-4 max-md:px-0 max-md:mx-0 max-md:border-b max-md:border-border-light max-md:active:bg-bg-light",
+                "max-md:text-primary max-md:w-full max-md:py-4 max-md:px-0 max-md:mx-0  max-md:active:bg-bg-light",
             )
           }
         >
@@ -68,14 +73,14 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
       {!isFooter && (
         <div className="md:hidden mt-auto w-full">
           <CalendlyCTA shouldRenderOnMobile />
-          <Button
-            variant="glass-link"
-            to="/contact-us"
+          {/* <Button
+            variant="button"
+            // to="/contact-us"
             onClick={closeMobileMenu}
-            className="w-full text-center"
+            className="w-full font-bold text-center bg-white! border-none! text-primary! "
           >
             Contact Us
-          </Button>
+          </Button> */}
         </div>
       )}
     </nav>

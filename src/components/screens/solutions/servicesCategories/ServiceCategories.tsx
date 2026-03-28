@@ -36,7 +36,7 @@ const ServiceCategories = () => {
             </SectionTitle>
           </Animated>
 
-          <div className="relative w-full max-w-280 h-110 mx-auto">
+          <div className="relative w-full max-w-280 h-108.25 mx-auto">
             {serviceCategoriesData.map((card, i) => (
               <ScrollCard
                 key={i}
@@ -61,7 +61,7 @@ const ServiceCategories = () => {
         </Animated>
 
         <Stagger className="space-y-8">
-          {serviceCategoriesData.map((service) => (
+          {serviceCategoriesData.map(service => (
             <StaggerItem key={service.id} variant="slideUp">
               <SimpleServiceCard {...service} />
             </StaggerItem>

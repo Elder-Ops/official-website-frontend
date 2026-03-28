@@ -2,8 +2,11 @@ import heroVideo from "@/assets/video/home-hero-video.mp4";
 import Button from "@/components/ui/button";
 import { Animated } from "@/components/ui/animated";
 import { heroText } from "@/contents/screens/home";
+import buttonBg from "@/assets/svg/button-bg.svg";
+import { useNavigate } from "react-router";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative h-dvh flex flex-col items-center justify-center bg-primary">
       <video
@@ -30,13 +33,18 @@ const Hero = () => {
 
         <Animated variant="slideUp" type="animate" delay={0.4}>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button
-              variant="glass-link"
-              to="/talent"
-              className="w-69.5 sm:w-fit"
+            <button
+              onClick={() => navigate("/talent")}
+              className="relative cursor-pointer font-medium w-69.5 sm:w-fit px-6 py-3 rounded-full overflow-hidden text-white transition-transform duration-200 hover:-translate-y-1 "
             >
-              Our hiring process
-            </Button>
+              <img
+                src={buttonBg}
+                alt="bg"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <span className="relative z-10">Our hiring process</span>
+            </button>
+
             <Button
               variant="link"
               to="/solutions"
