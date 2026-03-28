@@ -6,7 +6,7 @@ import closeIcon from "@/assets/svg/cancel-icon.svg";
 import { useScrollDetection } from "@/hooks/useScrollDetection";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useGlobalStore } from "@/store/useGlobalStore";
-import Button from "../ui/button";
+// import Button from "../ui/button";
 import Navbar from "../navbar/Navbar";
 import CalendlyCTA from "../contactUs/react-calendly";
 
@@ -15,14 +15,16 @@ const Header = () => {
   const isHomePage = pathname === "/";
   const isScrolled = useScrollDetection(50);
   const isVisible = useScrollDirection();
-  const { isMobileMenuOpen, toggleMobileMenu } = useGlobalStore();
+  const { isMobileMenuOpen, isNavbarRevealBlocked, toggleMobileMenu } =
+    useGlobalStore();
 
   const showWhiteBg = isScrolled;
   const showDarkContent = !isHomePage && !isScrolled;
+  const shouldShowHeader = !isNavbarRevealBlocked && isVisible;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-7.5 transition-all duration-300 ${showWhiteBg ? "bg-white" : ""} ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      className={`fixed top-0 left-0 right-0 z-50 py-7.5 transition-all duration-300 ${showWhiteBg ? "bg-white" : ""} ${shouldShowHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container flex items-center justify-between">
         <Link to="/">
@@ -33,6 +35,7 @@ const Header = () => {
           )}
         </Link>
 
+        <div className="flex md:hidden items-center justify-center ">
         <button
           onClick={toggleMobileMenu}
           className="md:hidden z-50 relative"
@@ -44,28 +47,26 @@ const Header = () => {
             className={`size-6 ${showWhiteBg || showDarkContent || isMobileMenuOpen ? "invert" : ""}`}
           />
         </button>
+        </div>
+
 
         <Navbar isHomePage={!showWhiteBg && !showDarkContent} />
         <div className="md:flex hidden items-center gap-4">
-<CalendlyCTA shouldRenderOnMobile={false} />
-        {isHomePage ? (
-          <Button
-            variant={showWhiteBg ? "glass-link" : "link"}
-            to="/contact-us"
-            className={` ${showWhiteBg ? "" : "bg-white text-primary"}`}
-          >
-            Contact Us
-          </Button>
-        ) : (
-          <Button
-            variant="glass-link"
-            to="/contact-us"
-          >
-            Contact Us
-          </Button>
-        )}
+          {/* {isHomePage ? (
+            <Button
+              variant={showWhiteBg ? "glass-link" : "link"}
+              to="/contact-us"
+              className={` hover:-translate-y-1 border  transition-transform duration-200  h-10! ${showWhiteBg ? "" : "bg-white text-primary"}`}
+            >
+              Contact Us
+            </Button>
+          ) : (
+            <Button variant="glass-link" to="/contact-us">
+              Contact Us
+            </Button>
+          )} */}
 
-         
+          <CalendlyCTA shouldRenderOnMobile={false} />
         </div>
       </div>
     </header>

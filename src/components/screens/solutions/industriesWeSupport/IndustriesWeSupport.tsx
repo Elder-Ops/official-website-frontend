@@ -17,7 +17,7 @@ const IndustriesWeSupport = () => {
     setOpenCardId(null);
   };
 
-  const selectedIndustry = industriesData.find((ind) => ind.id === openCardId);
+  const selectedIndustry = industriesData.find(ind => ind.id === openCardId);
 
   return (
     <section className="relative container section-space-block">
@@ -32,7 +32,7 @@ const IndustriesWeSupport = () => {
       </Animated>
 
       <Stagger className="grid grid-cols-1 space-y-4 sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 items-stretch">
-        {industriesData.map((industry) => (
+        {industriesData.map(industry => (
           <StaggerItem key={industry.id} variant="slideUp">
             <IndustriesCard
               number={industry.number}

@@ -1,4 +1,4 @@
-import enterpriseImg from "@/assets/svg/enterprise-ready-feature-img.svg";
+import enterpriseImg from "@/assets/svg/enterprise-ready-feature-imge.svg";
 import SectionTitle from "@/components/ui/section-title";
 import { Animated } from "@/components/ui/animated";
 import FeatureListItem from "@/components/ui/feature-list-item";
@@ -42,6 +42,9 @@ const EnterpriseReady = () => {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover rounded-2xl"
+           style={{
+    imageRendering: "auto",
+  }}
         />
 
         <div className="absolute inset-0 flex items-center justify-center p-4">

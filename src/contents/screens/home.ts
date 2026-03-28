@@ -226,7 +226,7 @@ export const statsData = [
   },
   {
     id: 2,
-    value: "99.5%",
+    value: "98%",
     label: "Successful Long-Term Placements",
   },
   {
