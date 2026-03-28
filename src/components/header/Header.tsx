@@ -15,14 +15,16 @@ const Header = () => {
   const isHomePage = pathname === "/";
   const isScrolled = useScrollDetection(50);
   const isVisible = useScrollDirection();
-  const { isMobileMenuOpen, toggleMobileMenu } = useGlobalStore();
+  const { isMobileMenuOpen, isNavbarRevealBlocked, toggleMobileMenu } =
+    useGlobalStore();
 
   const showWhiteBg = isScrolled;
   const showDarkContent = !isHomePage && !isScrolled;
+  const shouldShowHeader = !isNavbarRevealBlocked && isVisible;
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-7.5 transition-all duration-300 ${showWhiteBg ? "bg-white" : ""} ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      className={`fixed top-0 left-0 right-0 z-50 py-7.5 transition-all duration-300 ${showWhiteBg ? "bg-white" : ""} ${shouldShowHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div className="container flex items-center justify-between">
         <Link to="/">
@@ -33,6 +35,7 @@ const Header = () => {
           )}
         </Link>
 
+        <div className="flex md:hidden items-center justify-center ">
         <button
           onClick={toggleMobileMenu}
           className="md:hidden z-50 relative"
@@ -44,6 +47,8 @@ const Header = () => {
             className={`size-6 ${showWhiteBg || showDarkContent || isMobileMenuOpen ? "invert" : ""}`}
           />
         </button>
+        </div>
+
 
         <Navbar isHomePage={!showWhiteBg && !showDarkContent} />
         <div className="md:flex hidden items-center gap-4">

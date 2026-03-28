@@ -42,6 +42,9 @@ const EnterpriseReady = () => {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover rounded-2xl"
+           style={{
+    imageRendering: "auto",
+  }}
         />
 
         <div className="absolute inset-0 flex items-center justify-center p-4">

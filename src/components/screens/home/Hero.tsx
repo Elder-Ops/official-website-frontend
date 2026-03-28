@@ -3,21 +3,38 @@ import Button from "@/components/ui/button";
 import { Animated } from "@/components/ui/animated";
 import { heroText } from "@/contents/screens/home";
 import buttonBg from "@/assets/svg/button-bg.svg";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.defaultMuted = true;
+    video.muted = true;
+
+    void video.play().catch(() => {});
+  }, []);
+
   return (
     <div className="relative h-dvh flex flex-col items-center justify-center bg-primary">
       <video
+        ref={videoRef}
         src={heroVideo}
         autoPlay
         muted
         loop
         playsInline
         controls={false}
+        preload="auto"
         poster="/images/hero-fallback.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
+        disablePictureInPicture
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
       />
 
       <section className="container hero-space-block relative z-10 w-full text-white text-center md:px-0! md:max-w-189">

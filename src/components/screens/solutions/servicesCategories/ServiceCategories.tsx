@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useScroll } from "framer-motion";
 import { Animated, Stagger, StaggerItem } from "@/components/ui/animated";
 import maskedDots from "@/assets/svg/service-category-bg.svg";
@@ -9,9 +8,27 @@ import {
 import SectionTitle from "@/components/ui/section-title";
 import ScrollCard from "./ScrollCard";
 import SimpleServiceCard from "./SimpleServiceCard";
+import { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
+import { useGlobalStore } from "@/store/useGlobalStore";
 
 const ServiceCategories = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionContainerRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionContainerRef, {
+    margin: "-20% 0px -20% 0px",
+  });
+  const setNavbarRevealBlocked = useGlobalStore(
+    (state) => state.setNavbarRevealBlocked,
+  );
+
+  useEffect(() => {
+    setNavbarRevealBlocked(isInView);
+
+    return () => {
+      setNavbarRevealBlocked(false);
+    };
+  }, [isInView, setNavbarRevealBlocked]);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -20,14 +37,15 @@ const ServiceCategories = () => {
 
   return (
     <section
-      className="relative w-full bg-linear-b from-[#012714] to-[#01140A] bg-cover"
+      ref={sectionContainerRef}
+      className="relative w-full bg-linear-b from-[#012714] to-[#01140A] bg-cover md:bg-fixed"
       style={{ backgroundImage: `url(${maskedDots})` }}
     >
       {/* Desktop: Scroll-driven card area*/}
       <div
         ref={sectionRef}
         className="relative hidden container section-space-block md:block"
-        style={{ height: `${serviceCategoriesData.length * 100}vh` }}
+        style={{ height: `${serviceCategoriesData.length * 115}vh` }}
       >
         <div className="sticky top-0 h-dvh flex flex-col justify-center">
           <Animated variant="slideUp" className="mb-20 mx-auto">
@@ -36,7 +54,7 @@ const ServiceCategories = () => {
             </SectionTitle>
           </Animated>
 
-          <div className="relative w-full max-w-280 h-108.25 mx-auto">
+          <div className="relative w-full max-w-280 h-108.25 mx-auto overflow-hidden">
             {serviceCategoriesData.map((card, i) => (
               <ScrollCard
                 key={i}
