@@ -9,7 +9,7 @@ import featureImage from "@/assets/svg/feature-image.svg";
 
 const Services = () => {
   return (
-    <section className="container section-space-top relative pb-22 md:pb-[56px]">
+    <section className="container relative pt-18 pb-22 md:pt-25 md:pb-14">
       <img
         src={dotParticle}
         alt="Decorative dots pattern"
