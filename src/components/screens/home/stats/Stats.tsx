@@ -5,7 +5,7 @@ import dotParticle from "@/assets/svg/stats-dots.svg";
 const Stats = () => {
   return (
     <section
-      className="container py-22 md:py-14 relative grid grid-cols-2 lg:grid-cols-4 border-t border-b border-[#F2F2E8]"
+      className="container py-8 md:py-14 relative grid grid-cols-2 lg:grid-cols-4 border-t border-b border-[#F2F2E8]"
       aria-label="Company statistics"
     >
       <img

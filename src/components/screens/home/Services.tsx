@@ -1,7 +1,7 @@
 import SectionTitle from "@/components/ui/section-title";
 import { Animated } from "@/components/ui/animated";
 import dotParticle from "@/assets/svg/dots.svg";
-import dotParticleTwo from "@/assets/svg/what-we-do-dots.svg";
+// import dotParticleTwo from "@/assets/svg/what-we-do-dots.svg";
 import line from "@/assets/svg/line.svg";
 import { servicesData, servicesText } from "@/contents/screens/home";
 import corporateMan from "@/assets/jpg/featured-one.jpg";
@@ -9,7 +9,7 @@ import featureImage from "@/assets/svg/feature-image.svg";
 
 const Services = () => {
   return (
-    <section className="container relative pt-18 pb-22 md:pt-25 md:pb-14">
+    <section className="container relative py-22 md:pt-25 md:pb-14">
       <img
         src={dotParticle}
         alt="Decorative dots pattern"
@@ -17,12 +17,12 @@ const Services = () => {
         aria-hidden="true"
       />
 
-      <img
+      {/* <img
         src={dotParticleTwo}
         alt="Decorative dots pattern"
         className="hidden sm:top-9.25 sm:block sm:absolute sm:left-8 md:left-16"
         aria-hidden="true"
-      />
+      /> */}
 
       <Animated
         variant="slideUp"

@@ -11,7 +11,7 @@ const CoreSolutions = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="container relative py-22 md:pt-25 md:pb-18">
+    <section className="container relative pt-8 pb-22 md:py-25">
       <img
         src={dotParticle}
         alt="Decorative pattern"

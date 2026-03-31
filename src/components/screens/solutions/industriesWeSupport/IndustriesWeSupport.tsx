@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "@/components/ui/section-title";
 import { Animated, Stagger, StaggerItem } from "@/components/ui/animated";
-import dotParticle from "@/assets/svg/industries-we-support-dots.svg";
+// import dotParticle from "@/assets/svg/industries-we-support-dots.svg";
 import IndustriesCard from "./IndustriesCard";
 import IndustryModal from "./IndustryModal";
 import { industriesData, industriesText } from "@/contents/screens/solutions";
@@ -21,12 +21,12 @@ const IndustriesWeSupport = () => {
 
   return (
     <section className="relative container section-space-block">
-      <img
+      {/* <img
         src={dotParticle}
         alt="Decorative pattern"
         className="absolute left-4 top-0 hidden lg:block lg:left-16"
         aria-hidden="true"
-      />
+      /> */}
       <Animated variant="slideUp" className="text-center mb-12 md:mb-16">
         <SectionTitle>{industriesText.title}</SectionTitle>
       </Animated>

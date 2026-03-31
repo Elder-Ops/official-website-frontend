@@ -15,7 +15,7 @@ const HowItWorks = () => {
         aria-hidden="true"
       />
 
-      <div className="container section-space-block text-white overflow-hidden">
+      <div className="container py-22 md:py-25 text-white overflow-hidden">
         <div className="relative z-10">
           <Animated
             variant="slideUp"
