@@ -20,7 +20,7 @@ const IndustriesWeSupport = () => {
   const selectedIndustry = industriesData.find((ind) => ind.id === openCardId);
 
   return (
-    <section className="relative container section-space-block">
+    <section className="relative container py-22 md:pt-18 md:pb-25">
       {/* <img
         src={dotParticle}
         alt="Decorative pattern"
