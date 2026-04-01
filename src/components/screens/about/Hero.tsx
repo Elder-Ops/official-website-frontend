@@ -21,11 +21,11 @@ const Hero = () => {
         
       /> */}
 
-      <div className="container">
+      <div className="container pt-10 md:pt-20">
         <Animated
           variant="slideUp"
           type="animate"
-          className="pt-10 md:pt-18 lg:max-w-167 mx-auto text-center"
+          className=" lg:max-w-167 mx-auto text-center"
         >
           <HeroTitle>
             Built for Enterprise Engineering
