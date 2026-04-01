@@ -9,7 +9,7 @@ import HowWeDeliverCard from "./HowWeDeliverCard";
 
 const HowWeDeliver = () => {
   return (
-    <section className="relative container pt-22 pb-0 sm:pb-16">
+    <section className="relative container pt-22 pb-0 sm:pt-25 sm:pb-16">
       <Animated variant="slideUp" className="flex items-center justify-between">
         <div className="max-w-105 mx-auto text-center">
           <SectionTitle className="mb-2">{howWeDeliverText.title}</SectionTitle>

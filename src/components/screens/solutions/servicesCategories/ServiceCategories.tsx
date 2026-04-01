@@ -56,7 +56,7 @@ const ServiceCategories = () => {
       {/* Desktop: Scroll-driven card area*/}
       <div
         ref={sectionRef}
-        className="relative hidden container py-22 md:py-25 md:block"
+        className="relative hidden container py-22 md:pt-25 md:pb-16 md:block"
         style={{ height: `${serviceCategoriesData.length * 115}vh` }}
       >
         <div className="sticky top-18 2xl:top-60 h-dvh flex flex-col justify-center items-center">
