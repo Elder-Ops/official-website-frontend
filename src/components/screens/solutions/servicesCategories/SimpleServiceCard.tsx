@@ -8,18 +8,18 @@ type SimpleServiceCardProps = {
 
 const SimpleServiceCard = ({ title, list, image }: SimpleServiceCardProps) => {
   return (
-    <div className="service-card p-6 rounded-[20px] mb-8 text-center">
+    <div className="bg-white p-6 rounded-[20px] mb-8">
       <div>
-        <h3 className="font-medium font-urbanist text-2xl text-white leading-8">
+        <h3 className="font-medium font-urbanist text-2xl text-[#01170B] leading-8 mb-4">
           {title}
         </h3>
 
         {list && (
-          <ul className="mt-2 space-y-3 flex flex-col items-center">
+          <ul className="mt-2 space-y-3">
             {list.map((item, index) => (
               <li key={index} className="flex items-center gap-3">
                 <img src={checkIcon} alt="check icon" aria-hidden={true} />
-                <span className="text-white">{item}</span>
+                <span className="text-accent-two">{item}</span>
               </li>
             ))}
           </ul>
@@ -37,7 +37,7 @@ const SimpleServiceCard = ({ title, list, image }: SimpleServiceCardProps) => {
       </div>
 
       <div className="rounded-2xl overflow-hidden mt-4">
-        <img src={image} alt="" className="w-full h-48 object-cover" />
+        <img src={image} alt="" className="w-full h-55 object-cover" />
       </div>
     </div>
   );

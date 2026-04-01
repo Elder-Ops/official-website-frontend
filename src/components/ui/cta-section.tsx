@@ -43,6 +43,8 @@ const CTASection = () => {
 
   if (!content) return null;
 
+  const isAboutPage = pathname === "/about";
+
   return (
     <section className="container section-space-block">
       <CTACard
@@ -51,6 +53,7 @@ const CTASection = () => {
         description={content.description}
         buttonText={content.buttonText}
         buttonLink={content.buttonLink}
+        maxWidth={isAboutPage ? "max-w-[640px]" : "max-w-[528px]"}
       />
     </section>
   );

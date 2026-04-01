@@ -166,16 +166,7 @@ export const industriesData = [
     title: "FinTech & Payments",
     description:
       "FinTech and payments platforms operate in environments where uptime, transaction integrity, and security are critical. Infrastructure must support innovation while maintaining compliance and operational resilience. ElderOps supports FinTech organizations with secure cloud architecture, CI/CD modernization, observability implementation, and scalable data systems. We help teams accelerate delivery, reduce operational risk, and maintain the trust customers and regulators expect.",
-    images: [
-      pos,
-      woman,
-      swipeCardOne,
-      swipeCardTwo,
-      swipeCardThree,
-      woman,
-      swipeCardOne,
-      swipeCardTwo,
-    ],
+    images: [pos, woman, swipeCardOne, swipeCardTwo, swipeCardThree],
   },
   {
     id: 2,

@@ -8,10 +8,10 @@ import plusSign from "@/assets/svg/plus-sign.svg";
 const OurApproach = () => {
   return (
     <section className="bg-linear-to-b from-bg-light to-bg-light/0">
-      <div className="container section-space-block">
+      <div className="container section-space-top">
         <Animated
           variant="slideUp"
-          className="max-w-161 mb-16 mx-auto text-center md:mx-0 md:text-start"
+          className="max-w-161 mb-12  mx-auto text-center md:mb-16 md:mx-0 md:text-start"
         >
           <SectionTitle>{ourApproachText.title}</SectionTitle>
         </Animated>

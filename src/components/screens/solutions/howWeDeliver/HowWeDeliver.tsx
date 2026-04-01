@@ -9,22 +9,22 @@ import HowWeDeliverCard from "./HowWeDeliverCard";
 
 const HowWeDeliver = () => {
   return (
-    <section className="relative container section-space-top">
+    <section className="relative container pt-22 pb-0 sm:pt-25 sm:pb-16">
       <Animated variant="slideUp" className="flex items-center justify-between">
-        <div className="max-w-105 mx-auto mb-2.5 text-center lg:text-start lg:mx-0">
-          <SectionTitle>{howWeDeliverText.title}</SectionTitle>
+        <div className="max-w-105 mx-auto text-center">
+          <SectionTitle className="mb-2">{howWeDeliverText.title}</SectionTitle>
           <p className="text-accent-one">{howWeDeliverText.description}</p>
         </div>
         <img
           src={dotParticle}
           alt="Decorative pattern"
           aria-hidden="true"
-          className="hidden lg:block"
+          className="absolute right-0 hidden lg:block max-h-44.75"
         />
       </Animated>
 
       {/* Mobile: Grid layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 md:hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 md:hidden">
         {howWeDeliverData.map((item) => (
           <HowWeDeliverCard key={item.id} {...item} />
         ))}
@@ -32,7 +32,7 @@ const HowWeDeliver = () => {
 
       {/* Desktop: Marquee */}
       <div
-        className="relative overflow-hidden mt-16 hidden md:block"
+        className="relative overflow-hidden hidden md:block md:mt-16"
         role="region"
         aria-label="Value drivers"
       >

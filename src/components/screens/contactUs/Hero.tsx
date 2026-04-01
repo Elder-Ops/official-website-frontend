@@ -14,9 +14,9 @@ const Hero = () => {
             </HeroTitle>
 
             <p className="text-[#7C7C7C] text-sm max-sm:leading-5.5 md:text-base mt-2.5 max-w-121.25 mx-auto lg:mx-0">
-              Looking for niche experts in quantum computing, advanced
-              cryptography, or specialized AI models? Reach out - our team can
-              connect you with top talent.
+              Need vetted engineering talent for DevOps, data, AI, or software
+              development? Reach out to ElderOps. We connect U.S. companies with
+              rigorously screened global engineers matched to their exact needs.
             </p>
           </div>
 

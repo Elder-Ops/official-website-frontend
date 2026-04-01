@@ -6,8 +6,8 @@ import { comparisonData, whyWeStandApartText } from "@/contents/screens/home";
 
 const WhyWeStandApart = () => {
   return (
-    <section className="bg-bg-cream section-space-block">
-      <div className="container relative hidden md:block">
+    <section className="bg-bg-cream py-22 md:py-25 hidden md:block">
+      <div className="container relative">
         <img
           src={dotParticle}
           alt="Decorative pattern"

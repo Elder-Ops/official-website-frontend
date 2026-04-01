@@ -38,7 +38,7 @@ export const enterpriseReadyText = {
   title: "Enterprise-Ready From Day One",
   description:
     "Our vetting process is designed to filter for more than just syntax knowledge. We test for system thinking and business alignment.",
-  statTitle: "98%",
+  statTitle: "94%",
   statSubtitle: "Talent Retention Rate",
   statDescription:
     "Our engineers don't just join; they stay and deliver compounding value to your team over years.",

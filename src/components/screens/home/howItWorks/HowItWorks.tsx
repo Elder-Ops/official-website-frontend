@@ -15,11 +15,11 @@ const HowItWorks = () => {
         aria-hidden="true"
       />
 
-      <div className="container section-space-block text-white overflow-hidden">
+      <div className="container py-22 md:py-25 text-white overflow-hidden">
         <div className="relative z-10">
           <Animated
             variant="slideUp"
-            className="max-w-135.5 mx-auto text-center mb-16"
+            className="max-w-135.5 mx-auto text-center mb-8"
           >
             <SectionTitle className="text-white mb-1">
               {howItWorksText.title}

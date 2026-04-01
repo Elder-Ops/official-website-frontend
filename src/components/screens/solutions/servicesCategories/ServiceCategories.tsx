@@ -1,4 +1,4 @@
-import { useScroll } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { Animated, Stagger, StaggerItem } from "@/components/ui/animated";
 import maskedDots from "@/assets/svg/service-category-bg.svg";
 import {
@@ -8,13 +8,14 @@ import {
 import SectionTitle from "@/components/ui/section-title";
 import ScrollCard from "./ScrollCard";
 import SimpleServiceCard from "./SimpleServiceCard";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 import { useGlobalStore } from "@/store/useGlobalStore";
 
 const ServiceCategories = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const sectionContainerRef = useRef<HTMLElement>(null);
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const isInView = useInView(sectionContainerRef, {
     margin: "-20% 0px -20% 0px",
   });
@@ -35,32 +36,45 @@ const ServiceCategories = () => {
     offset: ["start start", "end end"],
   });
 
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const segmentSize = 1 / serviceCategoriesData.length;
+    // Reveal the incoming card earlier so its rise from the bottom is visible.
+    const overlapLead = segmentSize * 0.25;
+    const nextIndex = Math.floor((latest + overlapLead) / segmentSize);
+
+    setActiveCardIndex(
+      Math.min(serviceCategoriesData.length - 1, Math.max(0, nextIndex)),
+    );
+  });
+
   return (
     <section
       ref={sectionContainerRef}
-      className="relative w-full bg-linear-b from-[#012714] to-[#01140A] bg-cover md:bg-fixed"
+      className="relative w-full h-auto bg-cover md:bg-fixed"
       style={{ backgroundImage: `url(${maskedDots})` }}
     >
       {/* Desktop: Scroll-driven card area*/}
       <div
         ref={sectionRef}
-        className="relative hidden container section-space-block md:block"
+        className="relative hidden container py-22 md:pt-25 md:pb-16 md:block"
         style={{ height: `${serviceCategoriesData.length * 115}vh` }}
+        
       >
-        <div className="sticky top-0 h-dvh flex flex-col justify-center">
-          <Animated variant="slideUp" className="mb-20 mx-auto">
+        <div className="sticky top-18 2xl:top-60 h-dvh flex flex-col justify-center items-center">
+          <Animated variant="slideUp" className="md:mb-16 mx-auto">
             <SectionTitle className="text-white text-center">
               {serviceCategoriesText.title}
             </SectionTitle>
           </Animated>
 
-          <div className="relative w-full max-w-280 h-108.25 mx-auto overflow-hidden">
+          <div className="relative w-full max-w-280 h-full mx-auto overflow-hidden">
             {serviceCategoriesData.map((card, i) => (
               <ScrollCard
                 key={i}
                 card={card}
                 index={i}
                 total={serviceCategoriesData.length}
+                activeCardIndex={activeCardIndex}
                 scrollYProgress={scrollYProgress}
               />
             ))}
@@ -79,7 +93,7 @@ const ServiceCategories = () => {
         </Animated>
 
         <Stagger className="space-y-8">
-          {serviceCategoriesData.map(service => (
+          {serviceCategoriesData.map((service) => (
             <StaggerItem key={service.id} variant="slideUp">
               <SimpleServiceCard {...service} />
             </StaggerItem>

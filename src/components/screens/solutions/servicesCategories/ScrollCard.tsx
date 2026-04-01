@@ -2,20 +2,23 @@ import type { serviceCategoriesData } from "@/contents/screens/solutions";
 import { motion, useTransform, type MotionValue } from "framer-motion";
 import ServiceCard from "./ServiceCard";
 
-const CARD_ENTRY_OFFSET = 172;
-const CARD_EXIT_SCALE = 0.965;
+// Use window.innerHeight for entry offset so card comes from below the viewport
+const CARD_ENTRY_OFFSET =
+  typeof window !== "undefined" ? window.innerHeight : 800;
+const CARD_EXIT_SCALE = 0.9;
 const CARD_EXIT_MID_SCALE = 0.982;
-const CARD_EXIT_OPACITY = 0.91;
 
 const ScrollCard = ({
   card,
   index,
   total,
+  activeCardIndex,
   scrollYProgress,
 }: {
   card: (typeof serviceCategoriesData)[0];
   index: number;
   total: number;
+  activeCardIndex: number;
   scrollYProgress: MotionValue<number>;
 }) => {
   const segmentSize = 1 / total;
@@ -49,32 +52,22 @@ const ScrollCard = ({
       : [1, 1, 1],
   );
 
-  const cardOpacity = useTransform(
-    scrollYProgress,
-    index < total - 1
-      ? [0, enterStart, enterMid, enterEnd, exitStart, exitEnd, 1]
-      : [0, enterStart, enterMid, enterEnd, 1],
-    index < total - 1
-      ? [
-          index === 0 ? 1 : 0,
-          index === 0 ? 1 : 0,
-          index === 0 ? 1 : 0.42,
-          1,
-          1,
-          CARD_EXIT_OPACITY,
-          CARD_EXIT_OPACITY,
-        ]
-      : [index === 0 ? 1 : 0, index === 0 ? 1 : 0, index === 0 ? 1 : 0.42, 1, 1],
-  );
+  const isVisiblePair =
+    index === activeCardIndex || index === activeCardIndex - 1;
 
   return (
     <motion.div
-      className="absolute inset-0 overflow-hidden flex flex-col lg:flex-row origin-top will-change-transform"
+      className="absolute h-[80%] 2xl:h-[60%] inset-0 overflow-hidden flex flex-col lg:flex-row origin-top"
       style={{
         zIndex: index + 1,
         y,
         scale,
-        opacity: cardOpacity,
+        opacity: isVisiblePair ? 1 : 0,
+        visibility: isVisiblePair ? "visible" : "hidden",
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+        WebkitBackfaceVisibility: "hidden",
+        WebkitTransform: "translateZ(0)",
       }}
     >
       <ServiceCard title={card.title} list={card.list} image={card.image} />

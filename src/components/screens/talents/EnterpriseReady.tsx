@@ -10,16 +10,16 @@ import {
 
 const EnterpriseReady = () => {
   return (
-    <section className="container section-space-top flex flex-col justify-between gap-16 overflow-x-hidden lg:flex-row lg:items-center lg:gap-20 xl:max-w-304 xl:mx-auto">
+    <section className="container section-space-top  flex flex-col justify-between gap-16 overflow-x-hidden md:pb-14 lg:flex-row lg:items-center lg:gap-20 xl:max-w-304 xl:mx-auto">
       <Animated variant="slideRight" className="max-w-115">
-        <SectionTitle className="mb-1 md:mb-2.5">
+        <SectionTitle className="mb-2">
           {enterpriseReadyText.title}
         </SectionTitle>
         <p className="text-accent-one text-sm md:text-base">
           {enterpriseReadyText.description}
         </p>
 
-        <ul className="mt-10 space-y-6 list-none xl:mt-22">
+        <ul className="mt-12 space-y-6 list-none xl:mt-22">
           {enterpriseReadyData.map((item, index) => (
             <FeatureListItem
               key={item.id}
@@ -42,9 +42,9 @@ const EnterpriseReady = () => {
           alt=""
           aria-hidden="true"
           className="absolute inset-0 size-full object-cover rounded-2xl"
-           style={{
-    imageRendering: "auto",
-  }}
+          style={{
+            imageRendering: "auto",
+          }}
         />
 
         <div className="absolute inset-0 flex items-center justify-center p-4">

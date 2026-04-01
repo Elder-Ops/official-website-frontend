@@ -12,7 +12,7 @@ const LogoMarquee = () => {
         {logos.map((company, index) => (
           <div
             key={`${company.altText}-${index}`}
-            className="shrink-0 px-9.375 py-8 md:py-3.75"
+            className="shrink-0 px-9.375 py-4 md:py-3.75"
           >
             <img
               src={company.defaultLogo}

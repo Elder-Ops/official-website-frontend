@@ -12,8 +12,8 @@ const Hero = () => {
       className="relative bg-cover bg-center bg-no-repeat pt-22.5"
       style={{ backgroundImage: `url(${heroImg})` }}
     >
-      <div className="container">
-        <div className="hero-space-block grid grid-cols-1 place-items-center gap-10 lg:grid-cols-2 xl:gap-27 xl:px-16">
+      <div className="container hero-space-block">
+        <div className="grid grid-cols-1 place-items-center gap-10 lg:grid-cols-2 xl:gap-27 xl:px-16">
           <Animated
             variant="slideUp"
             type="animate"
@@ -23,7 +23,7 @@ const Hero = () => {
               Engineering and data solutions from{" "}
               <Highlight className="lg:block">Global Talent</Highlight>
             </HeroTitle>
-            <p className="text-[#7C7C7C]  mt-2 sm:mt-4 lg:text-start">
+            <p className="text-[#7C7C7C] mt-3 sm:mt-4 lg:text-start">
               ElderOps helps Global teams move faster across DevOps, data,
               analytics, and software engineering without sacrificing quality.
               We build the team, your client interviews confirm the fit, and we
@@ -51,7 +51,7 @@ const Hero = () => {
 
           <Animated
             variant="scale"
-            className="rounded-[14px] h-full overflow-hidden lg:max-w-130.75 lg:max-h-103.5"
+            className="rounded-[14px] h-70 overflow-hidden lg:max-w-130.75 lg:h-103.5 lg:max-h-103.5"
           >
             <video
               src={featureVideo}
@@ -65,7 +65,7 @@ const Hero = () => {
           </Animated>
         </div>
 
-        <div className="pb-12">
+        <div className="mt-8 xl:px-16">
           <LogoMarquee />
         </div>
       </div>

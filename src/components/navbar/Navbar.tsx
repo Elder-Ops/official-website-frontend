@@ -4,9 +4,11 @@ import { NavLink } from "react-router";
 import { useGlobalStore } from "@/store/useGlobalStore";
 // import Button from "@/components/ui/button";
 import CalendlyCTA from "../contactUs/react-calendly";
+import elderOpsLogoGreen from "@/assets/svg/elderOps-green-logo.svg";
 
 const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
   const { isMobileMenuOpen, closeMobileMenu } = useGlobalStore();
+
   const navLinks: NavLinks[] = [
     {
       label: "Home",
@@ -38,10 +40,10 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
   return (
     <nav
       className={cn(
-        "flex items-center gap-10 text-sm",
-        isHomePage && !isFooter ? "text-white" : "text-primary",
+        "relative flex items-center gap-10 text-sm",
+        isHomePage && !isFooter ? "text-white" : " md:text-primary",
         !isFooter &&
-          "max-md:fixed max-md:inset-0 max-md:h-dvh max-md:bg-white max-md:z-40 max-md:flex-col max-md:items-start max-md:justify-start max-md:p-6 max-md:pt-24 max-md:pb-6 max-md:gap-0 max-md:text-2xl max-md:transition-transform max-md:duration-300 max-md:text-primary max-md:overflow-y-auto",
+          "max-md:fixed max-md:inset-0 max-md:h-dvh max-md:bg-white max-md:z-40 max-md:flex-col max-md:items-start max-md:justify-start max-md:p-6 max-md:pt-24 max-md:pb-6 max-md:gap-0 max-md:text-2xl max-md:transition-transform max-md:duration-300 max-md:text-[#909090] max-md:overflow-y-auto",
         !isFooter && !isMobileMenuOpen && "max-md:translate-x-full",
         className,
       )}
@@ -51,6 +53,13 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
           : undefined
       }
     >
+      {!isFooter && (
+        <img
+          src={elderOpsLogoGreen}
+          alt="elderOps logo"
+          className="absolute left-6 top-7.5 w-10 md:hidden"
+        />
+      )}
       {navLinks.map((link, index) => (
         <NavLink
           key={link.path + index}
@@ -62,7 +71,8 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
               isActive && "font-semibold text-success",
               isFooter && isMobileMenuOpen && "!bg-red-[500] h-[70vh] ",
               !isFooter &&
-                "max-md:text-primary max-md:w-full max-md:py-4 max-md:px-0 max-md:mx-0  max-md:active:bg-bg-light",
+                "max-md:w-full max-md:py-4 max-md:px-0 max-md:mx-0  max-md:active:bg-bg-light",
+              !isFooter && isActive && "text-success",
             )
           }
         >
@@ -71,7 +81,7 @@ const Navbar = ({ isHomePage, className, isFooter }: NavbarProps) => {
       ))}
 
       {!isFooter && (
-        <div className="md:hidden mt-auto w-full">
+        <div className="md:hidden mt-auto w-full flex items-center justify-center">
           <CalendlyCTA shouldRenderOnMobile />
           {/* <Button
             variant="button"
