@@ -57,13 +57,17 @@ const ScrollCard = ({
 
   return (
     <motion.div
-      className="absolute h-[80%] 2xl:h-[60%] inset-0 overflow-hidden flex flex-col lg:flex-row origin-top will-change-transform"
+      className="absolute h-[80%] 2xl:h-[60%] inset-0 overflow-hidden flex flex-col lg:flex-row origin-top"
       style={{
         zIndex: index + 1,
         y,
         scale,
         opacity: isVisiblePair ? 1 : 0,
         visibility: isVisiblePair ? "visible" : "hidden",
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+        WebkitBackfaceVisibility: "hidden",
+        WebkitTransform: "translateZ(0)",
       }}
     >
       <ServiceCard title={card.title} list={card.list} image={card.image} />

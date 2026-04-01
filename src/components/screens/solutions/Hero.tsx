@@ -65,7 +65,7 @@ const Hero = () => {
           </Animated>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 xl:px-16">
           <LogoMarquee />
         </div>
       </div>

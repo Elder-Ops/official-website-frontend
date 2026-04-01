@@ -58,6 +58,7 @@ const ServiceCategories = () => {
         ref={sectionRef}
         className="relative hidden container py-22 md:pt-25 md:pb-16 md:block"
         style={{ height: `${serviceCategoriesData.length * 115}vh` }}
+        
       >
         <div className="sticky top-18 2xl:top-60 h-dvh flex flex-col justify-center items-center">
           <Animated variant="slideUp" className="md:mb-16 mx-auto">
