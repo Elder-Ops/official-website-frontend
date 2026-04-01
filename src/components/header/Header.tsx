@@ -26,32 +26,39 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 py-7.5 transition-all duration-300 ${showWhiteBg ? "bg-white" : ""} ${shouldShowHeader ? "translate-y-0" : "-translate-y-full"}`}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container grid grid-cols-[1fr_auto] gap-2 md:grid-cols-[1fr_auto_1fr] items-center">
         <Link to="/">
           {showWhiteBg || showDarkContent ? (
-            <img src={elderOpsLogoGreen} alt="elderOps logo" />
+            <img
+              src={elderOpsLogoGreen}
+              alt="elderOps logo"
+              className="w-10 md:w-13.5"
+            />
           ) : (
-            <img src={elderOpsLogo} alt="elderOps logo" />
+            <img
+              src={elderOpsLogo}
+              alt="elderOps logo"
+              className="w-10 md:w-13.5"
+            />
           )}
         </Link>
 
-        <div className="flex md:hidden items-center justify-center ">
-        <button
-          onClick={toggleMobileMenu}
-          className="md:hidden z-50 relative"
-          aria-label="Toggle menu"
-        >
-          <img
-            src={isMobileMenuOpen ? closeIcon : menuIcon}
-            alt=""
-            className={`size-6 ${showWhiteBg || showDarkContent || isMobileMenuOpen ? "invert" : ""}`}
-          />
-        </button>
+        <div className="flex md:hidden items-center justify-center">
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden z-50 relative"
+            aria-label="Toggle menu"
+          >
+            <img
+              src={isMobileMenuOpen ? closeIcon : menuIcon}
+              alt=""
+              className={`size-6 ${showWhiteBg || showDarkContent || isMobileMenuOpen ? "invert" : ""}`}
+            />
+          </button>
         </div>
 
-
         <Navbar isHomePage={!showWhiteBg && !showDarkContent} />
-        <div className="md:flex hidden items-center gap-4">
+        <div className="md:flex hidden items-center justify-end gap-4 text-nowrap">
           {/* {isHomePage ? (
             <Button
               variant={showWhiteBg ? "glass-link" : "link"}

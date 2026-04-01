@@ -11,7 +11,7 @@ const CoreSolutions = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="container relative section-space-top">
+    <section className="container relative pt-8 pb-22 md:py-25">
       <img
         src={dotParticle}
         alt="Decorative pattern"
@@ -21,10 +21,10 @@ const CoreSolutions = () => {
 
       <Animated
         variant="slideUp"
-        className="flex flex-col items-center gap-6 md:flex-row md:flex-wrap md:items-center md:justify-between mb-16"
+        className="flex flex-col items-center gap-6 mb-12 md:flex-row md:flex-wrap md:items-center md:justify-between md:mb-16"
       >
         <div className="text-secondary text-center md:max-w-122.5 md:text-left">
-          <SectionTitle className="mb-2 md:mb-6">
+          <SectionTitle className="mb-2">
             {coreSolutionsText.title}
           </SectionTitle>
           <p className="text-accent-one text-sm md:text-base">

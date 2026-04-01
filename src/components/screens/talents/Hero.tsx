@@ -3,6 +3,7 @@ import HeroTitle from "@/components/ui/hero-title";
 import { Animated } from "@/components/ui/animated";
 import Highlight from "@/components/ui/highlight";
 import heroImg from "@/assets/svg/talent-hero-image.svg";
+import heroImgMobile from "@/assets/svg/talent-hero-img.svg";
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
       className="bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center pt-22.5"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="container hero-space-block">
+      <div className="container pt-10 md:py-20">
         <Animated variant="slideUp" type="animate" className="text-center">
           <HeroTitle className="lg:max-w-167 mx-auto">
             Thoroughly Vetted{" "}
@@ -26,12 +27,17 @@ const Hero = () => {
         </Animated>
         <Animated
           variant="scale"
-          className="size-full max-h-139 overflow-hidden rounded-2xl mt-10"
+          className="size-full h-70 sm:min-h-139 sm:max-h-139 overflow-hidden rounded-2xl mt-10"
         >
+          <img
+            src={heroImgMobile}
+            alt="hiring specialist interviewing a candidate"
+            className="sm:hidden size-full object-cover"
+          />
           <img
             src={heroImg}
             alt="hiring specialist interviewing a candidate"
-            className="size-full object-cover"
+            className="hidden sm:block size-full object-cover"
           />
         </Animated>
       </div>

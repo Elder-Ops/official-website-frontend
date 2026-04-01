@@ -8,12 +8,12 @@ import {
 
 const SeniorityLevels = () => {
   return (
-    <section className="container section-space-top">
+    <section className="container section-space-top md:pb-14">
       <Animated
         variant="slideUp"
-        className="flex flex-col items-center justify-center mb-10 lg:mb-16"
+        className="flex flex-col items-center justify-center mb-12 lg:mb-16"
       >
-        <SectionTitle className="mb-2.5">
+        <SectionTitle className="mb-2">
           {seniorityLevelsText.title}
         </SectionTitle>
         <p className="text-accent-one text-sm md:text-base">

@@ -8,16 +8,16 @@ import MatchingApproachCard from "./MatchingApproachCard";
 
 const HowItWorks = () => {
   return (
-    <section className="relative container section-space-top">
+    <section className="relative container section-space-top pb-0 sm:pb-20">
       <img
         src={dotParticle}
         alt="Decorative pattern"
         aria-hidden="true"
-        className="absolute right-0 top-0"
+        className="absolute right-0 top-0 hidden sm:block"
       />
 
-      <div className="z-10 pb-0 lg:pb-20">
-        <Animated variant="slideUp" className="mb-8">
+      <div className="z-10 pb-0">
+        <Animated variant="slideUp" className="mb-12 md:mb-16">
           <SectionTitle>{howItWorksText.title}</SectionTitle>
         </Animated>
 

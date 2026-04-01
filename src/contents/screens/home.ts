@@ -1,12 +1,16 @@
-import infinion from "@/assets/svg/trustedcompanies/infinion.svg";
-import atbTech from "@/assets/svg/trustedcompanies/atb-tech.svg";
-import choiceCloud from "@/assets/svg/trustedcompanies/choice-cloud.svg";
-import hubint from "@/assets/svg/trustedcompanies/hubinit.svg";
-import initTs from "@/assets/svg/trustedcompanies/inits.svg";
-import moniepoint from "@/assets/svg/trustedcompanies/moniepoint.svg";
-import newGlobe from "@/assets/svg/trustedcompanies/newGlobe.svg";
-import plugLink from "@/assets/svg/trustedcompanies/pluglink.svg";
-import quickRemit from "@/assets/svg/trustedcompanies/quick-remit.svg";
+import infinion from "@/assets/svg/trustedcompanies/infinion-logo-default.svg";
+import atbTech from "@/assets/svg/trustedcompanies/atbtech-logo-default.svg";
+import choiceCloud from "@/assets/svg/trustedcompanies/choiceCloud-logo-default.svg";
+import hubint from "@/assets/svg/trustedcompanies/hubinit-logo-default.svg";
+import initTs from "@/assets/svg/trustedcompanies/inits-logo-default.svg";
+import moniepoint from "@/assets/svg/trustedcompanies/moniepoint-logo-default.svg";
+import newGlobe from "@/assets/svg/trustedcompanies/newglobe-logo-default.svg";
+import plugLink from "@/assets/svg/trustedcompanies/plug-link-logo-default.svg";
+import quickRemit from "@/assets/svg/trustedcompanies/quickremit-logo-default.svg";
+import shell from "@/assets/svg/trustedcompanies/shell-logo-default.svg";
+import syscomptech from "@/assets/svg/trustedcompanies/syscomptech-logo-default.svg";
+import tandatech from "@/assets/svg/trustedcompanies/tanda-logo-default.svg";
+import notchHr from "@/assets/svg/trustedcompanies/notchHr-logo-default.svg";
 
 import cloud from "@/assets/png/cloud.png";
 import data from "@/assets/png/data-platform.png";
@@ -61,12 +65,28 @@ export const trustedCompaniesLogo = [
     defaultLogo: quickRemit,
     altText: "quick remit  logo",
   },
+  {
+    defaultLogo: shell,
+    altText: "shell  logo",
+  },
+  {
+    defaultLogo: syscomptech,
+    altText: "syscomptech  logo",
+  },
+  {
+    defaultLogo: tandatech,
+    altText: "tandatech  logo",
+  },
+  {
+    defaultLogo: notchHr,
+    altText: "notchHr  logo",
+  },
 ];
 
 export const servicesText = {
   title: "What We Do",
   subtext:
-    "Our process ensures both technical excellence and organizational fit. Our screening ensures quality. Your interview ensures alignment. Together, we prevent misfits.",
+    "Our process ensures both technical excellence and organizational fit. Our screening ensures quality. Your interview ensures alignment. Together, we prevent mismatches.",
 };
 
 export const servicesData = [
@@ -96,7 +116,7 @@ export const servicesData = [
 export const coreSolutionsText = {
   title: "Core Solution Areas",
   subtext:
-    "Our process ensures both technical excellence and organizational fit. Our screening ensures quality. Your interview ensures alignment. Together, we prevent misfits.",
+    "Our screening ensures quality. Your interview ensures alignment. Together, we prevent mismatches.",
 };
 
 export const coreSolutionsData = [
@@ -187,8 +207,7 @@ export const comparisonData = {
 
 export const howItWorksText = {
   title: "How It Works",
-  subtext:
-    "High-Quality Matching. Zero Guesswork.Our screening ensures quality. Your interview ensures alignment. Together, we prevent misfits.",
+  subtext: "High-Quality Matching. Zero Guesswork.",
 };
 
 export const howItWorksStepsData = [
@@ -222,21 +241,21 @@ export const statsData = [
   {
     id: 1,
     value: "250+",
-    label: "Engineers in Our Global Network",
+    label: "Engineers in our global network",
   },
   {
     id: 2,
-    value: "98%",
-    label: "Successful Long-Term Placements",
+    value: "94%",
+    label: "Successful placements",
   },
   {
     id: 3,
-    value: "28 Days",
-    label: "Average Time to Deploy Talent",
+    value: "48 hours",
+    label: "To first qualified candidate",
   },
   {
     id: 4,
-    value: "40%",
-    label: "Average Reduction in Cloud Waste",
+    value: "7+ years",
+    label: "Average engineer experience",
   },
 ];

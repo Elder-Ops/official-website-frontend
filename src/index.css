@@ -36,14 +36,14 @@ body {
 }
 
 .section-space-top {
-  padding-top: 80px;
+  padding-top: 72px;
 }
 .section-space-bottom {
-  padding-bottom: 80px;
+  padding-bottom: 72px;
 }
 
 .section-space-block {
-  padding-block: 80px;
+  padding-block: 72px;
 }
 
 .hero-space-block {
@@ -52,17 +52,17 @@ body {
 
 @media (max-width: 768px) {
   .section-space-top {
-    padding-top: 64px;
+    padding-top: 88px;
   }
   .section-space-bottom {
-    padding-bottom: 64px;
+    padding-bottom: 88px;
   }
 
   .section-space-block {
-    padding-block: 64px;
+    padding-block: 88px;
   }
   .hero-space-block {
-    padding-block: 64px;
+    padding-block: 40px;
   }
 }
 ::-webkit-scrollbar {
@@ -219,9 +219,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   padding: 2px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     111.11deg,
     rgba(143, 202, 172, 0) 11.95%,
     rgba(134, 189, 160, 0.3) 27.08%,
@@ -237,7 +237,7 @@ body {
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   mask-composite: exclude;
-  pointer-events: none;
+  pointer-events: none; */
 }
 
 video::-webkit-media-controls {
@@ -286,4 +286,3 @@ video::-webkit-media-controls-start-playback-button {
   position: relative;
   z-index: 1;
 }
-

@@ -26,8 +26,8 @@ const MatchingApproachCard = ({
         </p>
       </div>
 
-      <div className="mt-8">
-        <h3 className="text-primary text-2xl leading-8 font-urbanist font-semibold mb-1">
+      <div className="mt-10 md:mt-8">
+        <h3 className="text-primary text-2xl leading-8 font-urbanist font-semibold mb-1.5">
           {title}
         </h3>
         <p className="text-accent-one leading-6">{description}</p>
