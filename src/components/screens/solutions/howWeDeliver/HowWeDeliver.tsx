@@ -11,7 +11,7 @@ const HowWeDeliver = () => {
   return (
     <section className="relative container pt-22 pb-0 sm:pb-16">
       <Animated variant="slideUp" className="flex items-center justify-between">
-        <div className="max-w-105 mx-auto text-center lg:text-start lg:mx-0">
+        <div className="max-w-105 mx-auto text-center">
           <SectionTitle className="mb-2">{howWeDeliverText.title}</SectionTitle>
           <p className="text-accent-one">{howWeDeliverText.description}</p>
         </div>

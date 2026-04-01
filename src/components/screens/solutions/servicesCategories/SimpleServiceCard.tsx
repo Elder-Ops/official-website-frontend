@@ -37,7 +37,7 @@ const SimpleServiceCard = ({ title, list, image }: SimpleServiceCardProps) => {
       </div>
 
       <div className="rounded-2xl overflow-hidden mt-4">
-        <img src={image} alt="" className="w-full h-48 object-cover" />
+        <img src={image} alt="" className="w-full h-55 object-cover" />
       </div>
     </div>
   );
