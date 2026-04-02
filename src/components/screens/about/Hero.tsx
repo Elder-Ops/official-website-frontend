@@ -3,7 +3,7 @@
 import HeroTitle from "@/components/ui/hero-title";
 import { Animated } from "@/components/ui/animated";
 import Highlight from "@/components/ui/highlight";
-import globeSketch from "@/assets/svg/globe-sketch-two.svg";
+import globeSketch from "@/assets/png/globe_no_bg.png";
 
 const Hero = () => {
   return (
@@ -12,8 +12,8 @@ const Hero = () => {
     >
       <div
         style={{ backgroundImage: `url(${globeSketch})` }}
-        className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[calc(100dvh-350px)] object-contain bg-no-repeat bg-cover"
-      ></div>
+        className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[calc(100dvh-360px)] object-contain bg-no-repeat bg-cover 2xl:bg-size-[100%_100%]"
+      />
       {/* <img
         src={globeSketch}
         alt=""
