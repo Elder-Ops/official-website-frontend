@@ -5,8 +5,23 @@ import { Animated } from "@/components/ui/animated";
 import heroImg from "@/assets/svg/talent-hero-bg.svg";
 import featureVideo from "@/assets/video/globe-video.mp4";
 import Highlight from "@/components/ui/highlight";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+    useEffect(() => {
+      const video = videoRef.current;
+  
+      if (!video) return;
+  
+      video.defaultMuted = true;
+      video.muted = true;
+  
+      void video.play().catch(() => {});
+    }, []);
+  
   return (
     <section
       className="relative bg-cover bg-center bg-no-repeat pt-22.5"
@@ -60,7 +75,11 @@ const Hero = () => {
               loop
               playsInline
               controls={false}
-              className="size-full object-cover"
+               ref={videoRef}
+        preload="auto"
+        poster="/images/hero-fallback.jpg"
+        disablePictureInPicture
+        className="pointer-events-none size-full object-cover "
             />
           </Animated>
         </div>

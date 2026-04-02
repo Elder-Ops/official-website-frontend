@@ -7,7 +7,7 @@ interface ServiceCardProps {
 }
 const ServiceCard = ({ title, list, image }: ServiceCardProps) => {
   return (
-    <div className="grid grid-cols-2 bg-white rounded-[20px] overflow-hidden">
+    <div className="w-full h-[80%] 2xl:h-[60%] max-h-125 grid grid-cols-2 bg-white rounded-[20px] overflow-hidden">
       <Stagger
         staggerDelay={0.12}
         className="p-10 md:p-14 lg:p-16 flex flex-col justify-center border border-[#f3f3ea] rounded-bl-[20px]"
