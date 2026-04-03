@@ -12,7 +12,7 @@ const Hero = () => {
     >
       <div
         style={{ backgroundImage: `url(${globeSketch})` }}
-        className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[calc(100dvh-360px)] object-contain bg-no-repeat bg-cover 2xl:bg-size-[100%_100%]"
+        className="hidden md:block absolute -bottom-5 left-1/2 -translate-x-1/2 w-full h-[calc(100dvh-360px)] object-contain bg-no-repeat bg-cover 2xl:bg-size-[100%_100%] "
       />
       {/* <img
         src={globeSketch}
